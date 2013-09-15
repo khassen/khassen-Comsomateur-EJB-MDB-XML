@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.w3schools.com" xmlns="http://www.w3schools.com"
+	elementFormDefault="qualified">
+
+	<!-- créer un element complexe type -->
+	<xs:element name="listCommandes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="commande" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="commande">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numero" type="xs:int" minOccurs="1" />
+				<xs:element name="description" type="xs:string" />
+				<xs:element name="dateCom" type="xs:date" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
